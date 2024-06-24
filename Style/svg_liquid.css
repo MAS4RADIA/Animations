@@ -1,0 +1,102 @@
+
+  body
+      {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         background-color: #111;
+         min-height: 100vh;
+         overflow: hidden;
+       }
+  .container
+      {
+         position: relative;
+         width: 250px;
+         height: 250px;
+         filter: url("#gooey");
+         animation: rotate 4s ease-out infinite;
+       }
+  .container .liquid
+      {
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         width: 80px;
+         height: 80px;
+         border-radius: 50%;
+         transform: translate(-50%, -50%);
+         background: linear-gradient(45deg, #C7EEFF, #37A);
+         box-shadow: 0 0 10px 5px #FFF;
+         --ani_dur: 4s;
+       }
+  .container .liquid:nth-child(1)
+      {
+         top: 0;
+         animation: drop_1 var(--ani_dur) linear infinite;
+       }
+  .container .liquid:nth-child(2)
+      {
+         left: 0;
+         animation: drop_2 var(--ani_dur) linear infinite;
+       }
+  .container .liquid:nth-child(3)
+      {
+         left: 100%;
+         animation: drop_3 var(--ani_dur) linear infinite;
+       }
+  .container .liquid:nth-child(4)
+      {
+         top: 100%;
+         animation: drop_4 var(--ani_dur) linear infinite;
+       }
+  svg
+      {
+         width: 0;
+         height: 0;
+       }
+
+  @keyframes rotate
+      {
+         0%
+           {  transform: rotate(360deg);  }
+         50%
+           {  transform: rotate(360deg);  }
+         100%
+           {  transfrom: rotate(0deg);  }
+       }
+  @keyframes drop_1
+      {
+         0%
+           {  top: 0;  }
+         50%
+           {  top: 100%;  }
+         100%
+           {  top: 100%;  }
+       }
+  @keyframes drop_2
+      {
+         0%
+           {  left: 0;  }
+         50%
+           {  left: 100%;  }
+         100%
+           {  left: 100%;  }
+       }
+  @keyframes drop_3
+      {
+         0%
+           {  left: 100%;  }
+         50%
+           {  left: 0;  }
+         100%
+           {  left: 0;  }
+       }
+  @keyframes drop_4
+      {
+         0%
+             {  top: 100%;  }
+         50%
+             {  top: 0;  }
+         100%
+             {  top: 0;  }
+       }

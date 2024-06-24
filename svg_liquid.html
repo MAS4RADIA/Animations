@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SVG | Liquid animation</title>
+    <link rel="stylesheet" type="text/css" href="./Style/svg_liquid.css" />
+    <meta charset="utf-8" />
+  </head>
+
+  <body>
+    <div class="container">
+      <span class="liquid"></span>
+      <span class="liquid"></span>
+      <span class="liquid"></span>
+      <span class="liquid"></span>
+    </div>
+
+    <svg>
+      <filter id="gooey">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="10" />
+        <feColorMatrix values="
+          1 0 0 0 0
+          0 1 0 0 0
+          0 0 1 0 0
+          0 0 0 20 -10
+         " />
+      </filter>
+    </svg>
+  </body>
+</html>
